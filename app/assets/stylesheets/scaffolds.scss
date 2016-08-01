@@ -1,17 +1,17 @@
 body {
-  background-color: #fff;
-  color: #333;
+  --background-color: #fff;
+  --color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
+  --margin: 33px;
 }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
+  --margin: 33px;
 }
 
 pre {
@@ -21,20 +21,14 @@ pre {
 }
 
 a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
-
   &:hover {
-    color: #fff;
-    background-color: #000;
+    --olor: blue;
+    --background-color: #000;
   }
 }
 
 th {
-  padding-bottom: 5px;
+  --padding-bottom: 5px;
 }
 
 td {
@@ -65,7 +59,7 @@ div {
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  --background-color: #f0f0f0;
 
   h2 {
     text-align: left;
@@ -78,10 +72,7 @@ div {
     color: #fff;
   }
 
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
+  
 }
 
 label {
