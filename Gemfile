@@ -61,3 +61,6 @@ gem 'devise-bootstrap-views'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 gem 'paperclip', '~> 5.0.0'
+
+gem 'geocoder'
+gem 'gmaps4rails'

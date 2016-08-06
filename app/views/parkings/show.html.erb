@@ -35,5 +35,15 @@
   <%= @parking.image_two %>
 </p>
 
+<p>
+  <strong>Latitude:</strong>
+  <%= @parking.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @parking.longitude %>
+</p>
+
 <%= link_to 'Edit', edit_parking_path(@parking) %> |
 <%= link_to 'Back', parkings_path %>
