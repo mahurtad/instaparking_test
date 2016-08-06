@@ -1,4 +1,4 @@
-  class Profile < ActiveRecord::Base
+class Profile < ActiveRecord::Base
   		belongs_to :user
     
     	has_attached_file :avatar,
@@ -7,7 +7,7 @@
     
 	    validates_attachment :avatar,
 	
-   		content_type: { content_type: ['image/jpg', 'image/png', 'image/gif'] }
+   		content_type: { content_type: ['image/jpeg', 'image/png', 'image/gif'] }
         
   def full_name
         self.first_name + " " + self.last_name
