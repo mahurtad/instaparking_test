@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805233353) do
+ActiveRecord::Schema.define(version: 20160806160741) do
+
+  create_table "cars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "id_car"
+    t.string   "model_car"
+    t.string   "brand_car"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "id_comments"
+    t.integer  "score"
+    t.text     "description", limit: 65535
+    t.integer  "reserve_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["reserve_id"], name: "index_comments_on_reserve_id", using: :btree
+  end
+
+  create_table "parkings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "id_parking"
+    t.string   "address"
+    t.string   "name"
+    t.integer  "number"
+    t.integer  "pricing_hour"
+    t.string   "image_one"
+    t.string   "image_two"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name"
@@ -25,6 +55,19 @@ ActiveRecord::Schema.define(version: 20160805233353) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
+  end
+
+  create_table "reserves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "id_reserve"
+    t.datetime "date_entry"
+    t.datetime "date_out"
+    t.integer  "amount_pay"
+    t.integer  "car_id"
+    t.integer  "parking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_reserves_on_car_id", using: :btree
+    t.index ["parking_id"], name: "index_reserves_on_parking_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -45,5 +88,8 @@ ActiveRecord::Schema.define(version: 20160805233353) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "comments", "reserves", column: "reserve_id"
   add_foreign_key "profiles", "users"
+  add_foreign_key "reserves", "cars"
+  add_foreign_key "reserves", "parkings"
 end

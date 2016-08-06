@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id parking:</strong>
+  <%= @parking.id_parking %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @parking.address %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @parking.name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @parking.number %>
+</p>
+
+<p>
+  <strong>Pricing hour:</strong>
+  <%= @parking.pricing_hour %>
+</p>
+
+<p>
+  <strong>Image one:</strong>
+  <%= @parking.image_one %>
+</p>
+
+<p>
+  <strong>Image two:</strong>
+  <%= @parking.image_two %>
+</p>
+
+<%= link_to 'Edit', edit_parking_path(@parking) %> |
+<%= link_to 'Back', parkings_path %>

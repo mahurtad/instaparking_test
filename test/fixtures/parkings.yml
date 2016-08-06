@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_parking: 1
+  address: MyString
+  name: MyString
+  number: 1
+  pricing_hour: 1
+  image_one: MyString
+  image_two: MyString
+
+two:
+  id_parking: 1
+  address: MyString
+  name: MyString
+  number: 1
+  pricing_hour: 1
+  image_one: MyString
+  image_two: MyString

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id reserve:</strong>
+  <%= @reserf.id_reserve %>
+</p>
+
+<p>
+  <strong>Date entry:</strong>
+  <%= @reserf.date_entry %>
+</p>
+
+<p>
+  <strong>Date out:</strong>
+  <%= @reserf.date_out %>
+</p>
+
+<p>
+  <strong>Amount pay:</strong>
+  <%= @reserf.amount_pay %>
+</p>
+
+<p>
+  <strong>Car:</strong>
+  <%= @reserf.car %>
+</p>
+
+<p>
+  <strong>Parking:</strong>
+  <%= @reserf.parking %>
+</p>
+
+<%= link_to 'Edit', edit_reserf_path(@reserf) %> |
+<%= link_to 'Back', reserves_path %>

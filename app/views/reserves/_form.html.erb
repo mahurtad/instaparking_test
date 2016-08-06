@@ -1,0 +1,16 @@
+<%= simple_form_for(@reserf) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :id_reserve %>
+    <%= f.input :date_entry %>
+    <%= f.input :date_out %>
+    <%= f.input :amount_pay %>
+    <%= f.association :car %>
+    <%= f.association :parking %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
