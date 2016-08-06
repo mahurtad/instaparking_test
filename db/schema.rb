@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20160806160741) do
 
+  create_table "Car", primary_key: "id_car", id: :string, limit: 7, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "model_car",        limit: 20
+    t.string  "brand_car",        limit: 20
+    t.integer "Client_id_client",            null: false
+  end
+
   create_table "cars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "id_car"
     t.string   "model_car"
